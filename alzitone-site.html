@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ferme Auberge d'Alzitone | Marie-Ange — Ghisonaccia, Haute-Corse</title>
+<meta name="description" content="Ferme auberge d'Alzitone à Ghisonaccia. Marie-Ange vous accueille au milieu des vignobles pour une cuisine corse authentique. Menu complet à 30€. Réservation obligatoire.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{--vin:#6a1a2a;--vin2:#8a2a3a;--vin-light:#f5e8ea;--vin-pale:#fdf5f5;--brun:#1a0f08;--brun2:#2d1a0a;--creme:#faf7f2;--text:#1a0f08;--text-sec:#4a2a1a;--text-muted:#9a7060;--border:rgba(106,26,42,.12);--radius:8px}
+body{font-family:'Inter',sans-serif;background:var(--creme);color:var(--text);line-height:1.6}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:.9rem 2rem;background:rgba(250,247,242,.97);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:16px;color:var(--text);text-decoration:none;line-height:1.2}
+.nav-logo span{color:var(--vin);display:block;font-size:11px;font-family:'Inter',sans-serif;letter-spacing:1px}
+.nav-links{display:flex;gap:22px;list-style:none}
+.nav-links a{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;cursor:pointer;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--vin);color:#fff;border:none;padding:9px 20px;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s}
+.nav-cta:hover{background:var(--vin2)}
+
+.hero{background:var(--brun2);color:#fff;min-height:90vh;display:flex;flex-direction:column;justify-content:flex-end;padding:4rem 2rem;position:relative;overflow:hidden}
+.hero-top{position:absolute;top:0;left:0;right:0;height:3px;background:var(--vin)}
+.hero-content{position:relative;z-index:1;max-width:600px;animation:fadeUp .8s ease both}
+.hero-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(138,42,58,.9);margin-bottom:1.5rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:58px;font-weight:400;line-height:.95;margin-bottom:.3rem}
+.hero h1 em{color:rgba(200,100,120,.9);font-style:italic;display:block}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.45);font-style:italic;margin-bottom:.5rem}
+.hero-divider{width:50px;height:1px;background:rgba(106,26,42,.6);margin:1.4rem 0}
+.hero-desc{font-size:14px;color:rgba(255,255,255,.55);line-height:1.85;max-width:420px;margin-bottom:2rem}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-vin{background:var(--vin);color:#fff;border:none;padding:13px 28px;font-family:'Inter',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.btn-vin:hover{background:var(--vin2)}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2);padding:13px 28px;font-family:'Inter',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer}
+.hero-infos{display:flex;gap:20px;margin-top:3rem;flex-wrap:wrap}
+.hero-info{font-size:12px;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:6px}
+.hero-dot{width:4px;height:4px;background:var(--vin2);border-radius:50%}
+
+.ticker{background:var(--vin);padding:11px 0;overflow:hidden}
+.ticker-inner{display:inline-flex;animation:marquee 22s linear infinite}
+.ticker-item{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;padding:0 36px;opacity:.9}
+
+.section{padding:5rem 2rem}
+.sec-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--vin);margin-bottom:.8rem;display:flex;align-items:center;gap:12px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.sec-h{font-family:'Playfair Display',serif;font-size:44px;font-weight:400;color:var(--text);line-height:1.05;margin-bottom:1rem}
+.sec-h em{color:var(--vin);font-style:italic}
+
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:960px;margin:0 auto}
+.about-img{background:var(--brun2);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;position:relative}
+.about-img-txt{font-family:'Playfair Display',serif;font-size:13px;color:rgba(255,255,255,.15);letter-spacing:2px;text-transform:uppercase;text-align:center;line-height:2}
+.about-img-line{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--vin)}
+.about-quote{border-left:2px solid var(--vin);padding:1.2rem 1.5rem;margin:2rem 0;background:#fff}
+.about-quote-t{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;color:var(--text);line-height:1.6}
+.about-quote-a{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-top:.4rem}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.stat-n{font-family:'Playfair Display',serif;font-size:34px;color:var(--vin);line-height:1}
+.stat-l{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-top:3px}
+
+.menu-bg{background:#fff}
+.menu-grid{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border);margin-top:2rem;max-width:700px}
+.mi{display:flex;justify-content:space-between;align-items:baseline;padding:1.3rem 0;border-bottom:1px solid var(--border);gap:2rem;transition:padding-left .2s}
+.mi:hover{padding-left:8px}
+.mi.star{border-left:3px solid var(--vin);padding-left:12px;background:var(--vin-light)}
+.mi-name{font-family:'Playfair Display',serif;font-size:17px;color:var(--text)}
+.mi-name.v{color:var(--vin)}
+.mi-desc{font-size:12px;color:var(--text-muted);margin-top:3px}
+.mi-price{font-family:'Playfair Display',serif;font-size:17px;color:var(--vin);white-space:nowrap;flex-shrink:0}
+.menu-note{margin-top:1.2rem;padding:.9rem 1.1rem;background:var(--vin-light);font-size:13px;color:var(--vin);display:flex;gap:8px;align-items:flex-start;border-left:2px solid var(--vin)}
+
+.horaires-strip{background:var(--brun);display:grid;grid-template-columns:repeat(3,1fr)}
+.hor{padding:2rem 1.5rem;border-right:1px solid rgba(255,255,255,.06);text-align:center}
+.hor:last-child{border-right:none}
+.hor-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem}
+.hor-val{font-family:'Playfair Display',serif;font-size:20px;color:#fff}
+.hor-sub{font-size:12px;color:rgba(255,255,255,.35);margin-top:3px}
+
+.avis-bg{background:var(--vin-light)}
+.avis-layout{display:grid;grid-template-columns:1fr 2fr;gap:3rem;align-items:start;max-width:880px;margin:0 auto}
+.avis-score{background:var(--brun2);padding:2rem;text-align:center}
+.avis-big{font-family:'Playfair Display',serif;font-size:56px;color:rgba(200,100,120,.9);line-height:1}
+.avis-stars{font-size:20px;color:#d4a020;letter-spacing:3px;margin:.5rem 0}
+.avis-count{font-size:12px;color:rgba(255,255,255,.4)}
+.avis-bars{margin-top:1.4rem;display:flex;flex-direction:column;gap:7px}
+.avis-bar-row{display:flex;align-items:center;gap:8px}
+.avis-bar-label{font-size:11px;color:rgba(255,255,255,.4);width:20px;text-align:right;flex-shrink:0}
+.avis-bar-bg{flex:1;height:2px;background:rgba(255,255,255,.08)}
+.avis-bar-fill{height:2px;background:var(--vin2)}
+.avis-bar-pct{font-size:11px;color:rgba(255,255,255,.3);width:28px;flex-shrink:0}
+.avis-liste{display:flex;flex-direction:column;gap:2rem}
+.avis-item{padding-bottom:2rem;border-bottom:1px solid rgba(106,26,42,.15)}
+.avis-item:last-child{border-bottom:none;padding-bottom:0}
+.avis-item-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem}
+.avis-author{font-size:12px;font-weight:500;color:var(--text)}
+.avis-date{font-size:11px;color:var(--text-muted)}
+.avis-stars-s{font-size:12px;color:#d4a020;letter-spacing:2px}
+.avis-text{font-family:'Playfair Display',serif;font-size:15px;color:var(--text-sec);line-height:1.75;font-style:italic}
+
+.contact-section{background:var(--brun2);padding:5rem 2rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;max-width:900px;margin:0 auto}
+.contact-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(138,42,58,.8);margin-bottom:.8rem}
+.contact-h{font-family:'Playfair Display',serif;font-size:42px;font-weight:400;color:#fff;margin-bottom:2.5rem}
+.cinfo{padding:1.4rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;gap:4px}
+.cinfo:first-child{border-top:1px solid rgba(255,255,255,.07)}
+.cinfo-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25)}
+.cinfo-val{font-family:'Playfair Display',serif;font-size:17px;color:rgba(255,255,255,.8)}
+.cinfo-sub{font-size:12px;color:rgba(255,255,255,.3)}
+.rdv-form{display:flex;flex-direction:column;gap:0}
+.rg{border-bottom:1px solid rgba(255,255,255,.08);padding:1rem 0}
+.rg:first-child{border-top:1px solid rgba(255,255,255,.08)}
+.rl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;margin-bottom:.3rem}
+.ri{background:transparent;border:none;color:#fff;font-family:'Playfair Display',serif;font-size:16px;width:100%;outline:none}
+.ri::placeholder{color:rgba(255,255,255,.15)}
+.rs{background:transparent;border:none;color:rgba(255,255,255,.7);font-family:'Playfair Display',serif;font-size:16px;width:100%;outline:none;appearance:none;cursor:pointer}
+.rs option{background:var(--brun2);color:#fff}
+.rrow{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.rrow .rg:first-child{border-right:1px solid rgba(255,255,255,.08);padding-right:1.5rem}
+.rrow .rg:last-child{padding-left:1.5rem}
+.rdv-submit{margin-top:2rem;width:100%;background:var(--vin);color:#fff;border:none;padding:15px;font-family:'Inter',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.rdv-submit:hover{background:var(--vin2)}
+.rdv-ok{display:none;margin-top:1rem;padding:1rem;border:1px solid rgba(106,26,42,.4);color:rgba(200,100,120,.9);font-family:'Playfair Display',serif;font-style:italic;text-align:center;font-size:16px}
+
+footer{background:#0a0504;padding:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.2);letter-spacing:.5px}
+.footer-badge{font-size:10px;color:var(--vin2);opacity:.5;letter-spacing:1px;text-transform:uppercase}
+hr.d{border:none;border-top:1px solid var(--border)}
+@media(max-width:768px){
+  .hero h1{font-size:40px}
+  .about-layout{grid-template-columns:1fr}
+  .horaires-strip{grid-template-columns:1fr}
+  .hor{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
+  .avis-layout{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="nav-logo">Ferme Auberge d'Alzitone<span>Marie-Ange · Ghisonaccia · Haute-Corse</span></a>
+  <ul class="nav-links">
+    <li><a href="#menu">Le menu</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#contact">Réserver</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Réserver</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-top"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Ferme Auberge · Vignobles · Ghisonaccia · Haute-Corse</div>
+    <h1>Ferme Auberge<br><em>d'Alzitone</em></h1>
+    <p class="hero-sub">La table de Marie-Ange, au coeur des vignobles corses</p>
+    <div class="hero-divider"></div>
+    <p class="hero-desc">À 3 km de Ghisonaccia, au milieu des vignobles, Marie-Ange vous accueille avec la générosité typique de l'île. Agneau de lait, porcelet, cannelloni au brocciu, fiadone — tout est fait maison, avec amour et les produits de la ferme.</p>
+    <div class="hero-btns">
+      <button class="btn-vin" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Voir le menu</button>
+      <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Réserver une table</button>
+    </div>
+    <div class="hero-infos">
+      <span class="hero-info"><span class="hero-dot"></span>Menu à 30€ tout compris</span>
+      <span class="hero-info"><span class="hero-dot"></span>Produits de la ferme</span>
+      <span class="hero-info"><span class="hero-dot"></span>Vins corses inclus</span>
+      <span class="hero-info"><span class="hero-dot"></span>Sur réservation uniquement</span>
+    </div>
+  </div>
+</div>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Agneau de lait · </span>
+    <span class="ticker-item">Cannelloni au brocciu · </span>
+    <span class="ticker-item">Fiadone · </span>
+    <span class="ticker-item">Produits de la ferme · </span>
+    <span class="ticker-item">Vins corses inclus · </span>
+    <span class="ticker-item">Menu 30€ · </span>
+    <span class="ticker-item">Ghisonaccia · </span>
+    <span class="ticker-item">Haute-Corse · </span>
+    <span class="ticker-item">Agneau de lait · </span>
+    <span class="ticker-item">Cannelloni au brocciu · </span>
+    <span class="ticker-item">Fiadone · </span>
+    <span class="ticker-item">Produits de la ferme · </span>
+    <span class="ticker-item">Vins corses inclus · </span>
+    <span class="ticker-item">Menu 30€ · </span>
+    <span class="ticker-item">Ghisonaccia · </span>
+    <span class="ticker-item">Haute-Corse · </span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="about-layout">
+    <div class="about-img">
+      <div class="about-img-txt">Photo<br>de la ferme<br>et des vignobles</div>
+      <div class="about-img-line"></div>
+    </div>
+    <div>
+      <div class="sec-label">La table de Marie-Ange</div>
+      <h2 class="sec-h">Cuisine sincère<br>au coeur des <em>vignobles</em></h2>
+      <p style="font-size:14px;color:var(--text-sec);line-height:1.9;margin-bottom:1rem">Nichée au milieu des vignobles à 3 km au nord de Ghisonaccia, la Ferme Auberge d'Alzitone est bien plus qu'un restaurant — c'est une expérience humaine. Marie-Ange cuisine seule, avec passion, en utilisant les produits de sa ferme et des agriculteurs du coin.</p>
+      <p style="font-size:14px;color:var(--text-sec);line-height:1.9">Vous serez installés sous la jolie terrasse, dans un cadre calme et apaisant loin de l'agitation du bord de mer. Ici, on prend le temps — le temps de manger, de discuter, et parfois même d'écouter des chants corses en soirée.</p>
+      <div class="about-quote">
+        <div class="about-quote-t">"Un menu avec plusieurs choix qui m'a fait retrouver les goûts et toutes les saveurs de mon enfance. Miam. Un passage obligé lors de votre séjour dans le coin."</div>
+        <div class="about-quote-a">— Client, été 2024</div>
+      </div>
+      <div class="about-stats">
+        <div><div class="stat-n">4.6★</div><div class="stat-l">Note Tripadvisor</div></div>
+        <div><div class="stat-n">30 €</div><div class="stat-l">Menu complet avec vins</div></div>
+        <div><div class="stat-n">100%</div><div class="stat-l">Produits locaux maison</div></div>
+        <div><div class="stat-n">Alzitone</div><div class="stat-l">Ghisonaccia, Haute-Corse</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="d">
+
+<div class="section menu-bg" id="menu">
+  <div class="sec-label">Le menu</div>
+  <h2 class="sec-h">La cuisine de <em>Marie-Ange</em></h2>
+  <p style="font-size:14px;color:var(--text-sec);margin-bottom:.5rem">Un menu unique, généreux et sincère — de l'apéritif au digestif, tout compris à 30€.</p>
+  <div class="menu-grid">
+    <div class="mi star"><div><div class="mi-name v">Apéritif corse</div><div class="mi-desc">Vin de myrte maison — la façon parfaite de commencer le repas</div></div><div class="mi-price">Inclus</div></div>
+    <div class="mi"><div><div class="mi-name">Plateau de charcuterie corse</div><div class="mi-desc">Coppa, lonzu, prisuttu — spécialités artisanales de la ferme</div></div><div class="mi-price">Entrée</div></div>
+    <div class="mi"><div><div class="mi-name">Légumes et fruits du jardin</div><div class="mi-desc">Production maison — fraîcheur garantie du jardin à l'assiette</div></div><div class="mi-price">Entrée</div></div>
+    <div class="mi star"><div><div class="mi-name v">Agneau de lait corse</div><div class="mi-desc">Élevé sur la ferme — tendre et parfumé, la spécialité de Marie-Ange</div></div><div class="mi-price">Plat</div></div>
+    <div class="mi"><div><div class="mi-name">Porcelet fermier</div><div class="mi-desc">Cochon de lait élevé sur l'exploitation, cuisson lente et dorée</div></div><div class="mi-price">Plat</div></div>
+    <div class="mi"><div><div class="mi-name">Cannelloni au brocciu</div><div class="mi-desc">La spécialité corse par excellence, préparée maison</div></div><div class="mi-price">Plat</div></div>
+    <div class="mi"><div><div class="mi-name">Fromages corses maison</div><div class="mi-desc">Accompagnés des confitures maison — délicieuses</div></div><div class="mi-price">Fromages</div></div>
+    <div class="mi star"><div><div class="mi-name v">Fiadone ou moelleux au chocolat</div><div class="mi-desc">Dessert maison selon le jour — le fiadone au brocciu fait l'unanimité</div></div><div class="mi-price">Dessert</div></div>
+    <div class="mi star"><div><div class="mi-name v">Menu complet — apéritif au digestif</div><div class="mi-desc">Entrée + plat + fromage + dessert + vins corses inclus</div></div><div class="mi-price">30 €</div></div>
+  </div>
+  <div class="menu-note">Réservation obligatoire. Marie-Ange cuisine seule — prévenez à l'avance pour qu'elle prépare pour vous.</div>
+</div>
+
+<div class="horaires-strip">
+  <div class="hor"><div class="hor-label">Ouverture</div><div class="hor-val">À partir du 20 mai</div><div class="hor-sub">Jusqu'à fin septembre</div></div>
+  <div class="hor"><div class="hor-label">Service</div><div class="hor-val">Midi et soir</div><div class="hor-sub">Sur réservation uniquement</div></div>
+  <div class="hor"><div class="hor-label">Adresse</div><div class="hor-val">Alzitone</div><div class="hor-sub">3 km nord de Ghisonaccia</div></div>
+</div>
+
+<hr class="d">
+
+<div class="section avis-bg" id="avis">
+  <div class="sec-label">Avis clients</div>
+  <h2 class="sec-h">Ce qu'ils ont <em>vécu</em></h2>
+  <div class="avis-layout" style="margin-top:1.5rem">
+    <div class="avis-score">
+      <div class="avis-big">4.6</div>
+      <div class="avis-stars">★★★★★</div>
+      <div class="avis-count">Tripadvisor et Google</div>
+      <div class="avis-bars">
+        <div class="avis-bar-row"><span class="avis-bar-label">5</span><div class="avis-bar-bg"><div class="avis-bar-fill" style="width:80%"></div></div><span class="avis-bar-pct">80%</span></div>
+        <div class="avis-bar-row"><span class="avis-bar-label">4</span><div class="avis-bar-bg"><div class="avis-bar-fill" style="width:14%"></div></div><span class="avis-bar-pct">14%</span></div>
+        <div class="avis-bar-row"><span class="avis-bar-label">3</span><div class="avis-bar-bg"><div class="avis-bar-fill" style="width:6%"></div></div><span class="avis-bar-pct">6%</span></div>
+      </div>
+    </div>
+    <div class="avis-liste">
+      <div class="avis-item">
+        <div class="avis-item-top"><div><div class="avis-author">Famille de Belgique</div><div class="avis-date">Été 2024</div></div><div class="avis-stars-s">★★★★★</div></div>
+        <div class="avis-text">"Un lieu authentique et magique avec des produits locaux corses. Marie-Ange nous a accueillis chaleureusement. Cuisine locale et sincère, pleine d'amour. On est repartis avec le sentiment d'avoir passé une très bonne soirée, comme à la maison."</div>
+      </div>
+      <div class="avis-item">
+        <div class="avis-item-top"><div><div class="avis-author">Nicolas G.</div><div class="avis-date">Septembre 2024</div></div><div class="avis-stars-s">★★★★★</div></div>
+        <div class="avis-text">"Très bien accueillis par Marie-Ange dans sa ferme auberge, installés sous une jolie terrasse. Un menu unique avec entrée de charcuteries corses, des cannelloni délicieux et des beignets à la châtaigne avec confiture de clémentine maison. Un régal !"</div>
+      </div>
+      <div class="avis-item">
+        <div class="avis-item-top"><div><div class="avis-author">Oceane G.</div><div class="avis-date">Août 2024</div></div><div class="avis-stars-s">★★★★★</div></div>
+        <div class="avis-text">"La propriétaire est gentille, bienveillante et accueillante. C'est la deuxième fois que je viens manger et c'est toujours divin. Cuisine maison 100%. Allez-y les yeux fermés !"</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-section" id="contact">
+  <div class="contact-grid">
+    <div>
+      <div class="contact-label">Nous trouver — Réserver</div>
+      <h2 class="contact-h">Réserver<br>votre table</h2>
+      <div class="cinfo"><div class="cinfo-label">Adresse</div><div class="cinfo-val">Hameau d'Alzitone</div><div class="cinfo-sub">3 km au nord de Ghisonaccia, Haute-Corse</div></div>
+      <div class="cinfo"><div class="cinfo-label">Téléphone</div><div class="cinfo-val">06 33 87 27 XX</div><div class="cinfo-sub">Marie-Ange — réservation obligatoire</div></div>
+      <div class="cinfo"><div class="cinfo-label">Prix</div><div class="cinfo-val">30 € par personne</div><div class="cinfo-sub">Apéritif, entrée, plat, fromage, dessert et vins inclus</div></div>
+      <div class="cinfo"><div class="cinfo-label">Saison</div><div class="cinfo-val">Mai à septembre</div><div class="cinfo-sub">Midi et soir sur réservation uniquement</div></div>
+    </div>
+    <div>
+      <form class="rdv-form" onsubmit="handleRdv(event)">
+        <div class="rg"><label class="rl">Prénom et nom</label><input class="ri" type="text" placeholder="Jean Dupont" required /></div>
+        <div class="rg"><label class="rl">Téléphone</label><input class="ri" type="tel" placeholder="06 12 34 56 78" required /></div>
+        <div class="rrow">
+          <div class="rg"><label class="rl">Date souhaitée</label><input class="ri" type="date" required /></div>
+          <div class="rg"><label class="rl">Nombre de personnes</label><select class="rs"><option>1 personne</option><option>2 personnes</option><option selected>3 à 4 personnes</option><option>5 à 6 personnes</option><option>Groupe (7+)</option></select></div>
+        </div>
+        <div class="rg"><label class="rl">Service</label><select class="rs"><option>Déjeuner</option><option>Dîner</option></select></div>
+        <div class="rg"><label class="rl">Message (facultatif)</label><input class="ri" type="text" placeholder="Allergie, occasion spéciale, groupe..." /></div>
+        <button type="submit" class="rdv-submit">Envoyer ma demande de réservation</button>
+        <div id="rdv-ok" class="rdv-ok">Merci ! Marie-Ange vous recontacte très prochainement pour confirmer votre table.</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2025 Ferme Auberge d'Alzitone — Hameau Alzitone, Ghisonaccia, Haute-Corse</span>
+  <span class="footer-badge">Démo de site web</span>
+</footer>
+
+<script>
+function handleRdv(e){e.preventDefault();document.getElementById('rdv-ok').style.display='block';e.target.querySelector('.rdv-submit').style.display='none';}
+</script>
+</body>
+</html>
